@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<!-- Thymleaf 처리엔진이, 이 파일을 처리하려면 아래와 같이 
+이름공간(Namespace, 줄여서 ns)을 우선 선언해야 합니다. -->
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>hello.html</title>
+</head>
+
+<body>
+    <h3>/templates/hello.html</h3>
+    <hr>
+
+    <!-- GREETING : 모델의 공유속성명 -->
+    <h3 th:text="${GREETING}"></h3>    
+    <h3 th:text="${GREETING} + ', Really' + 7"></h3>    
+    <h3 th:text="Yoseph"></h3>    
+    <h3 th:text='${"Yoseph"}'></h3>    
+    <h3 th:text='${true}'></h3>    
+    <h3 th:text='${false}'></h3>    
+    <h3 th:text='${100}'></h3>    
+    <h3 th:text='${3.14159}'></h3>    
+    <h3 th:text='${ 100 + 200 }'></h3>    
+    <h3 th:text='${ 100 - 200 }'></h3>    
+    <h3 th:text='${ 100 * 200 }'></h3>    
+    <h3 th:text='${ 100 / 200 }'></h3>    
+    <h3 th:text='${ 100 % 200 }'></h3>    
+    <h3 th:text='${ 100 % 200 == 0 }'></h3>    
+    <h3 th:text='${ 4 % 2 == 0 }'></h3>    
+    <h3 th:text='${ 100 > 200 }'></h3>    
+    <h3 th:text='${ 100 < 200 }'></h3>    
+    <h3 th:text='${ 100 <= 200 }'></h3>
+    <h3 th:text='${ 100 >= 200 }'></h3>
+    
+    <h3>[[ ${ "제목3" } ]]</h3>
+    <p></p>
+
+    [[ ${ "제목4" } ]]
+    
+</body>
+
+</html>

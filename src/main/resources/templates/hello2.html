@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<!-- Thymleaf 처리엔진이, 이 파일을 처리하려면 아래와 같이 
+이름공간(Namespace, 줄여서 ns)을 우선 선언해야 합니다. -->
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>hello.html</title>
+</head>
+
+<body>
+    <h3>/templates/hello2.html</h3>
+    <hr>
+
+	<!-- 모델로 전달된 객체가 아주 평범한 일반자바객체일때, 어떻게 출력하는가 -->
+	
+	<h3 th:text="${PERSON}"></h3>
+	<hr>
+	
+	<h3 th:text="${PERSON.name}"></h3>
+	<h3 th:text="${PERSON.age}"></h3>
+	<hr>
+	
+	<h3 th:text="${PERSON.getName()}"></h3>
+	<h3 th:text="${PERSON.getAge()}"></h3>
+	<hr>
+
+    <p>이름: [[ ${PERSON.getName()} ]]</p>    
+    <p>나이: [[ ${PERSON.getAge()} ]]</p>
+    <hr>
+    
+    <h3>링크생성</h3>
+    <a href="https://naver.com">네이버1</a>
+    
+    <p></p>
+    
+    <a th:href="@{https://naver.com(temp1=${PERSON.name}, temp2=${PERSON.age})}">
+    	네이버2
+    </a>
+    
+    <p></p>
+    
+    <a th:href="@{https://naver.com(temp1=${PERSON.getName()}, temp2=${PERSON.getAge()})}">
+    	네이버3
+    </a>
+    
+    <p></p>
+    
+    <a th:href="@{https://naver.com(temp1=${'Yoseph'}, temp2=${23})}">
+    	네이버4
+    </a>
+    
+    <p></p>
+    
+    <a th:href="@{/board/getBoard(currPage=${7}, id=${33})}">
+    	게시판 제목5
+    </a>
+    
+    
+</body>
+
+</html>
